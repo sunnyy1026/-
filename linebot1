@@ -50,6 +50,9 @@ def handle_message(event):
     if '新北市' or '新北' in msg:
         message = NewTaipei()
         line_bot_api.reply_message(event.reply_token, message)
+    else:
+        message = TextSendMessage(text='今天想去哪個縣市釣魚呢？')
+        line_bot_api.reply_message(event.reply_token, message)
         
 import os
 if __name__ == "__main__":
