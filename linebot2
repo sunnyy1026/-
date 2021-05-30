@@ -1,0 +1,71 @@
+#這些是LINE官方開放的套件組合透過import來套用這個檔案上
+from linebot import (LineBotApi, WebhookHandler)
+from linebot.exceptions import (InvalidSignatureError)
+from linebot.models import *
+
+def Carousel_Template():
+    message = TemplateSendMessage(
+        alt_text='一則旋轉木馬按鈕訊息',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://blog.hotelscombined.com.tw/wp-content/uploads/2019/04/淡水.jpg',
+                    title='淡水',
+                    text='漁人碼頭',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='目前氣候狀況',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        PostbackTemplateAction(
+                            label='當地盛產漁獲',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        URITemplateAction(
+                            label='更多資訊',
+                            uri='https://yinien777.pixnet.net/blog/post/458661941-淡水觀海長堤'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://www.tour-ntpc.com/cdn/site/a3be84a9-7283-40a3-b4c7-758bf39c7828/Content/Upload/Place/202d4c83-68f8-4b52-bc71-b79e198c2224.jpg',
+                    title='三芝',
+                    text='淺水灣',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='目前氣候狀況',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        PostbackTemplateAction(
+                            label='當地盛產漁獲',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        URITemplateAction(
+                            label='更多資訊',
+                            uri='https://blog.xuite.net/dong617/blog/64567838'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://icrvb3jy.xinmedia.com/solomo/article/157850/FCFF115B-648F-92E3-EB70-B21E6559BC00.jpeg',
+                    title='萬里',
+                    text='萬里漁港',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='目前氣候狀況',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        PostbackTemplateAction(
+                            label='當地盛產漁獲',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        URITemplateAction(
+                            label='更多資訊',
+                            uri='https://blog.xuite.net/johnson_556/twblog/187968902'
+                        )
+                    ]
+                )
+            ]
+        )
+    )
+    return message
